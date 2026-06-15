@@ -1,0 +1,27 @@
+pip install fastapi uvicorn pydantic
+
+
+======== laravel ===========
+.env =============
+
+BROADCAST_CONNECTION=reverb
+
+REVERB_APP_ID=222787
+REVERB_APP_KEY=vecabtimmj9ilp2ouyxu
+REVERB_APP_SECRET=blpb6si51udlrknymhyl
+REVERB_HOST=127.0.0.1
+REVERB_PORT=8080
+REVERB_SCHEME=http
+
+# Vite এর জন্য সরাসরি হার্ডকোডেড ভ্যালু দিন (কোনো ভেরিয়েবল মিক্স করবেন না)
+VITE_REVERB_APP_KEY=vecabtimmj9ilp2ouyxu
+VITE_REVERB_HOST=127.0.0.1
+VITE_REVERB_PORT=8080
+VITE_REVERB_SCHEME=http
+
+php artisan install:api
+
+php artisan config:clear
+npm run build
+npm run dev
+php artisan reverb:start --port=8080
