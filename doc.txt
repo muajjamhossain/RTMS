@@ -20,8 +20,17 @@ VITE_REVERB_PORT=8080
 VITE_REVERB_SCHEME=http
 
 php artisan install:api
+php artisan install:broadcasting
 
 php artisan config:clear
+npm install
 npm run build
 npm run dev
 php artisan reverb:start --port=8080
+php artisan reverb:start --host=127.0.0.1 --port=8080 --debug
+
+php artisan queue:listen
+php artisan queue:work --tries=3 --verbose
+
+http://127.0.0.1:8001/dashboard?user_id=1
+http://127.0.0.1:8001/dashboard?user_id=2
