@@ -34,3 +34,6 @@ php artisan queue:work --tries=3 --verbose
 
 http://127.0.0.1:8001/dashboard?user_id=1
 http://127.0.0.1:8001/dashboard?user_id=2
+
+php artisan app:run
+npm run start-all
